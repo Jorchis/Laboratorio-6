@@ -9,40 +9,43 @@
         body
 			{
 				width: 1400px;
-				margin: 0 auto;
+                margin-left: auto;
+                margin-right: auto;
+                background-color:cornsilk;
 			}
-        .main
-			{
-				width: 80%;
-                margin-left: 20%;
-			}
-        img
+        .aside
             {
-                visibility: visible;
+                text-align: center;
+                font-size:x-large;
+            }
+        .main
+            {
+                text-align: center;
             }
     </style>
-    <title>Document</title>
+    <title>Principal</title>
 </head>
 <body>
-    <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">P&aacute;gina 1</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">P&aacute;gina 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">P&aacute;gina 3</a>
-          </li>    
-      </ul>
-    <div class="main container">
+    <div class="container">
         <div class="row">
-            <div class="col">
-                <h1>T&iacute;tulo</h1>
+            <div class="col-3 aside">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Principal</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Pagina 1.html">P&aacute;gina 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Pagina 2.html">P&aacute;gina 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Pagina 3.html">P&aacute;gina 3</a>
+                    </li>    
+                </ul>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
+            <div class="col main">
+                <h1>P&aacute;gina principal</h1>
                 <img class="img-fluid" src="pictures/d89368-21-7ac9a64ac9ec9a3650e2-0.png" alt="Im&aacute;gen XY">
             </div>
         </div>

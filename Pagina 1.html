@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body {
+            width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: azure;
+        }
+
+        .aside {
+            text-align: center;
+            font-size: x-large;
+        }
+
+        .alert {
+            margin-top: 9px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .accordion {
+            margin-bottom:10px;
+        }
+    </style>
+    <title>Breve definicion de la programacion logica</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 aside">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">P&aacute;gina 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Pagina 2.html">P&aacute;gina 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Pagina 3.html">P&aacute;gina 3</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col main">
+                <div>
+                    <div class="alert alert-dark" role="alert">
+                        Usted se encuentra en la p&aacute;gina 1
+                    </div>
+                    <h2>Breve definicion de la programacion logica</h2>
+                    <p>
+                        La programación lógica es una variedad de lo que conocemos con "programación declarativa", un
+                        paradigma opuesto a prácticamente todos los lenguajes de programación populares, desde
+                        ensamblador a Python pasando por BASIC, C o Java, a los que agrupamos en la categoría de la
+                        "programación imperativa".
+                        <br>En dichos lenguajes, la labor del programador es establecer cómo se resuelve un problema
+                        mediante sentencias. Sin embargo, la programación lógica no gira en torno al cómo, sino al qué:
+                        se trabaja de forma descriptiva, estableciendo relaciones entre entidades, lo que obliga a los
+                        que los lenguaje tengan un alto nivel de abstracción.
+                        <br>Este paradigma se basa en la fórmula "algoritmos = lógica + control" (la llamada Ecuación
+                        Informal de Kowalski), lo que significa que un algoritmo se crea especificando conocimiento
+                        mediante axiomas (lógica) y el problema se resuelve mediante un mecanismo de inferencia que
+                        actúa sobre el mismo (control).
+                    </p>
+                    <h2 class="center">Ejemplos:</h2>
+                    <h3 class="center">LENGUAJE PROLOG</h3>
+                    <p>
+                        Prolog (derivado de "PROgrammation en LOGique") nació a comienzos de la década de los 70, de la
+                        mano de un investigador de la Universidad de Marsella (Alain Colmerauer), mientras dirigiía en
+                        un proyecto de tratamiento algorítmico de lenguajes naturales.
+                        <br>Los ámbitos de la computación donde más se usa Prolog son los de la inteligencia artificial
+                        y aspectos relacionados con la misma como el machine learning, procesamiento de lenguaje
+                        natural, construcción de sistemas expertos, etc.
+                    </p>
+                    <center>
+                        <p>
+                            <i>
+                                Para entender el siguiente ejemplo se debe aclarar primero que el lenguaje Prolog
+                                trabaja solo con 3 elementos: Datos, reglas y preguntas. A continuacion se muestra un
+                                ejemplo clásico, donde hay tres datos, tres reglas y tres preguntas. Los datos
+                                padre(juancito,pedro), padre(pedro,luis) y padre luis,alberto) se utilizan para
+                                representar (respectivamente) la información: “el padre de Juancito es Pedro”, “el padre
+                                de Pedro es Luis” y “el padre de Luis es Alberto”.
+                            </i>
+                        </p>
+                        <img src="pictures/EJEMPLO DE PROGRAMA PROLOG.png" width="600">
+                        <p>
+                            <i>
+                                Las reglas que se muestran en el ejemplo permiten definir (a partir de datos u otra
+                                regla) los conceptos de “abuelo”, “hijo” y “tiene hijos”. En particular, estas reglas
+                                tienen variables y, como se explicará más adelante, las variables se diferencian de
+                                otros elementos del lenguaje porque tienen una letra mayúscula inicial o el símbolo
+                                especial “_” (por ejemplo, X, Y, Z, UnPadre, UnHijo y _ son variables). La primera
+                                regla, por ejemplo, define el concepto de abuelo, usando la definición de padre, y
+                                expresa que “el abuelo de un individuo X es un individuo Y, si es cierto que el padre de
+                                X es el individuo Z, y además el padre de Z es Y ”. En este ejemplo, usando esta regla
+                                se podrá inferir que Luis es el abuelo de Juancito, usando los datos
+                                padre(juancito,pedro) y padre(pedro,luis).
+                            </i>
+                            <br><br>
+                            <i>
+                                La segunda regla expresa que “el hijo de un individuo UnPadre es UnHijo, si es el caso
+                                que el padre de UnHijo es UnPadre ”. Luego, con esta regla se podrá inferir que “el hijo
+                                de Alberto es Luis”, a partir del dato padre(luis,alberto). Finalmente, la regla
+                                tiene_hijos(X):-hijo(X,_) expresa que “un individuo X tiene hijos, si el hijo de X
+                                existe”. En este ejemplo, podrá inferirse que “Pedro tiene hijos”, mientras que
+                                “Juancito tiene hijos” no puede deducirse de los datos, ya que no hay ningún individuo
+                                que tenga como padre a Juancito.
+                            </i>
+                            <br><br>
+                            <i>
+                                De esta forma, los datos nos permitirán representar información que consideramos cierta
+                                de manera incondicional, mientras que las reglas se utilizarán para inferir o deducir
+                                información a partir de los datos (o de otras reglas). Las preguntas, por su parte,
+                                permiten interrogar o consultar al programa para conocer si cierta información es cierta
+                                o no i.e., si puede inferirse a partir de los datos y las reglas del programa). Por
+                                ejemplo, la pregunta ?-padre(juancito,pedro) (que representa “¿Es el padre de Juancito,
+                                Pedro?”) tendrá una respuesta afirmativa, ya que hay un dato que lo “prueba”, mientras
+                                que la pregunta ?-tiene_hijos(juancito) tendrá una respuesta negativa.
+                            </i>
+                        </p>
+                        <h3>LENGUAJE MERCURY</h3>
+                    </center>
+                    <P>
+                        Mercury es un lenguaje de programación lógica / funcional que combina la claridad y la
+                        expresividad de la programación declarativa con funciones avanzadas de análisis estático y
+                        detección de errores.
+                        <br>Dentro de sus características, se destacan:
+                    </p>
+                    <ul>
+                        <li>Basado en prolog</li>
+                        <li>Soporta modos</li>
+                        <li>Tiene un fuerte sistema de determinismo</li>
+                        <li>Tiene garbage collector</li>
+                        <li>Es modularizado</li>
+                        <li>Su COMPILADOR facilita el análisis estático y la optimización de código</li>
+                        <li>Variedad de lenguajes de destino</li>
+                    </ul>
+                    <h3 class="center">Estructura del código:</h3>
+                    <center>
+                        <img src="pictures/ESTRUCTURA DEL CODIGO EN MERCURY.png" width="650"></img>
+                    </center>
+                    </br>
+                    <h3 class="center">Tipos:</h3>
+                    <p>
+                        Mercury contiene los tipos clásicos int, float, char, double, etc. Sin embargo el usuario
+                        también puede definir nuevos tipos fácilmente utilizando la palabra reservada type.
+                    </p>
+                    <h3 class="center">Predicados:</h3>
+                    <p>
+                        Los predicados en Mercury son similares a los procedimientos en otros lenguajes, no tienen un
+                        valor de retorno por sí solos. En cambio tienen valores de verdad de acuerdo con las entradas y
+                        salidas que reciben como argumento.
+                    </p>
+                    <ul>
+                        <li>Hechos:</li>
+                        <ul>
+                            <li>
+                                Los hechos son predicados sin cuerpo y representan sucesos o información real.
+                                Cuando se necesitan varios argumentos en el hecho, se dice es una relación.
+                            </li>
+                        </ul>
+                        <li>Reglas:</li>
+                        <ul>
+                            <li>
+                                Las reglas son predicados con cuerpo dónde para que la cabeza sea verdad, el cuerpo
+                                también lo debe ser.
+                            </li>
+                        </ul>
+                    </ul>
+                    <h3 class="center">Modos:</h3>
+                    <p>
+                        Los modos especifican la forma en que se toman los argumentos al declarar predicados. Son en
+                        total 4 tipos de modos.
+                    </p>
+                    <ul>
+                        <li>"in" y "out":</li>
+                        <ul>
+                            <li>
+                                Para in, el parámetro que se introduce al predicado inicia con algún valor (ground) y
+                                acaba con algún valor (ground). Para out, el argumento que ingresa al predicado viene
+                                vacío (free) y sale con algún valor (ground).
+                            </li>
+                        </ul>
+                        <li>"di" y "uo":</li>
+                        <ul>
+                            <li>
+                                Unique, referencia un valor único. Esta io está optimizada y no consume mucha memoria.
+                                Los argumentos en modo di, son únicos al entrar al predicado y destruidos antes de salir
+                                (no pueden volver a ser usados) clobbered significa que la memoria que solía contener el
+                                valor a sido sobreescrita: ningún programa puede leer este valor. El modo uo recibe una
+                                variable vacía y la mantiene única.
+                            </li>
+                        </ul>
+                    </ul>
+                    <h3 class="center">LENGUAJE GODEL:</h3>
+                    <p>
+                        Gödel es un lenguaje de programación declarativo (basado en Prolog) y de propósito general de la
+                        familia de los lenguajes de programación lógica. Es un lenguaje fuertemente tipificado. Tiene un
+                        sistema de módulos. Gödel soporta una precisión infinita de números enteros, racionales de
+                        precisión infinita, y también números de punto flotante. También tiene una regla de cálculo
+                        flexible. El carácter declarativo de Gödel lo hace particularmente adecuado para su uso como
+                        lenguaje de enseñanza; reduce la brecha que existe actualmente entre la teoría y la práctica en
+                        la programación lógica; hace posibles herramientas avanzadas de ingeniería de software tales
+                        como depuradores declarativos y generadores de compilación; reduce el esfuerzo que supone
+                        proporcionar una aplicación paralela del lenguaje; y ofrece un margen sustancial para la
+                        paralelización en tales implementaciones.
+                        <br><br>El lenguaje Gödel fue diseñado por P.M. Hill y J.W. Lloyd, y el lenguaje fue
+                        implementado por A. Bowers y J. Wang. SAGE fue escrito por Corin Gurr.
+                        <br><br>Gödel es un lenguaje de programación declarativo y de propósito general de la familia de
+                        los lenguajes de programación lógica. Sus principales facilidades son las siguientes:
+                    </p>
+                    <ul>
+                        <li>Tipos</li>
+                        <li>Modulos</li>
+                        <li>Control</li>
+                        <li>Declaraciones de control</li>
+                        <li>Resolución de restricciones</li>
+                        <li>Operador de poda</li>
+                        <li>Meta-programación</li>
+                        <li>Entrada/Salida</li>
+                    </ul>
+                    <p>
+                        El siguiente ejemplo de módulo Gödel es una especificación del máximo común divisor (MCD) de dos
+                        números. Su objetivo es mostrar la naturaleza declarativa de Gödel, pero no es particularmente
+                        eficiente. El predicado DivisorComun dice que si i y j no son cero, d es un divisor común de i y
+                        j si está entre 1 y el más pequeño entre i y j y divide a los dos en forma exacta. El predicado
+                        Mcd dice que d es el MCD de i y j si es un divisor común de i y j y no existe e que sea también
+                        divisor común de i y j y sea más grande que d:
+                    </p>
+                    <center>
+                        <img src="pictures/EJEMPLO DE PROGRAMA GODEL.png" width="650"></img>
+                    </center>
+                    <h3 class="center">LENGUAJE DATALOG</h3>
+                    <p>
+                        Datalog (Database Logic) es un lenguaje lógico que se basa en el modelo relacional
+                    </p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Reglas en DATALOG (Captura de pantalla de un libro)
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <img src="pictures/REGLAS EN DATALOG.png" width="650"></img>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Significado de un programa DATALOG (Captura de pantalla de un libro)
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <img src="pictures/SIGNIFICADO DE UN PROGRAMA DATALOG.png" width="650"></img>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Ejemplo de un programa DATALOG
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <img src="pictures/EJEMPLO DE UN PROGRAMA DATALOG.jpg" width="650"></img>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="center">LENGUAJE SEQUENCEL:</h3>
+                    <p>
+                        SequenceL es un lenguaje de programación funcional de propósito general que permite la
+                        paralelización automática, su objetivo principal es mejorar el rendimiento de los procesadores
+                        con varios núcleos. Es un lenguaje, que, aunque tiene muchas herramientas de paralelización,
+                        está enfocado en la facilidad de programación para el usuario. Su principal ventaja es que
+                        permite escribir código común, y el software se encarga de maximizar el rendimiento del
+                        procesador, por medio de programación paralela. Sin embargo, aunque parece un lenguaje
+                        perteneciente a otro tipo de paradigma de programación, se caracteriza porque basa su lógica en
+                        hechos, reglas y consultas. Lo cuál lo hace un lenguaje con mucho potencial y muy diferente a
+                        los otros lenguajes anteriormente mencionados.
+                        <br><br>Se desarrolló inicialmente durante un período de 20 años a partir de 1989,
+                        principalmente en la Texas Tech University. La financiación principal fue de la NASA, que
+                        originalmente quería desarrollar un lenguaje de especificación que fuera "autoverificable"; es
+                        decir, una vez escritos, los requisitos podrían ejecutarse y los resultados contrastados con el
+                        resultado deseado.
+                        <br><br>El objetivo de crear un lenguaje que fuera lo suficientemente simple como para ser
+                        legible, pero lo suficientemente inequívoco como para ser ejecutable, llevó a los inventores a
+                        decidirse por un enfoque de lenguaje declarativo funcional, donde un programador describe los
+                        resultados deseados, en lugar de los medios para lograrlos. Entonces, el idioma es libre de
+                        resolver el problema de la manera más eficiente que pueda encontrar.
+                        <br><br>A continuación, una pequeña tabla que muestra las diferencias entre SequenceL y otro
+                        lenguaje popular, Java, permitiendonos ver la facilidad de escritura de código:
+                    </p>
+                    <center>
+                        <img src="pictures/EJEMPLO DE UN PROGRAMA SEQUENCEL.png" width="650"></img>
+                    </center>
+                    <ol>
+                        Referencias:
+                        <li><a
+                                href="https://www.genbeta.com/desarrollo/lenguaje-prolog-ejemplo-paradigma-programacion-logica">https://www.genbeta.com/desarrollo/lenguaje-prolog-ejemplo-paradigma-programacion-logica</a>
+                        </li>
+                        <li><a
+                                href="http://ferestrepoca.github.io/paradigmas-de-programacion/proglogica/tutoriales/Mercury/TutorialMercury.pdf">http://ferestrepoca.github.io/paradigmas-de-programacion/proglogica/tutoriales/Mercury/TutorialMercury.pdf</a>
+                        </li>
+                        <li><a
+                                href="http://ferestrepoca.github.io/paradigmas-de-programacion/proglogica/tutoriales/Mercury/index.html">http://ferestrepoca.github.io/paradigmas-de-programacion/proglogica/tutoriales/Mercury/index.html</a>
+                        </li>
+                        <li><a
+                                href="http://ferestrepoca.github.io/paradigmas-de-programacion/proglogica/tutoriales/godel/index.html">http://ferestrepoca.github.io/paradigmas-de-programacion/proglogica/tutoriales/godel/index.html</a>
+                        </li>
+                        <li><a
+                                href="https://es-academic.com/dic.nsf/eswiki/1295991">https://es-academic.com/dic.nsf/eswiki/1295991</a>
+                        </li>
+                        <li><a
+                                href="http://gpd.sip.ucm.es/rafa/docencia/bdsi/apuntes/tema7.pdf">http://gpd.sip.ucm.es/rafa/docencia/bdsi/apuntes/tema7.pdf</a>
+                        </li>
+                        <li><a
+                                href="https://ferestrepoca.github.io/paradigmas-de-programacion/proglogica/logica_teoria/lenguaje.html">https://ferestrepoca.github.io/paradigmas-de-programacion/proglogica/logica_teoria/lenguaje.html</a>
+                        </li>
+                        <li><a
+                                href="https://ri.conicet.gov.ar/bitstream/handle/11336/68092/CONICET_Digital_Nro.ad89d6a7-c0d9-4be5-8543-528173c183da_A.pdf?sequence=2&isAllowed=y">https://ri.conicet.gov.ar/bitstream/handle/11336/68092/CONICET_Digital_Nro.ad89d6a7-c0d9-4be5-8543-528173c183da_A.pdf?sequence=2&isAllowed=y</a>
+                        </li>
+                        <li><a
+                                href="https://en.wikipedia.org/wiki/SequenceL">https://en.wikipedia.org/wiki/SequenceL</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
